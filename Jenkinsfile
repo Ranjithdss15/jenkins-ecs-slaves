@@ -27,7 +27,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'sudo chown -R 996:992 "/.npm" '
+                sh 'chown -R 996:992 "/.npm" '
                 sh "git clone https://github.com/msfidelis/micro-api.git"
                 dir("micro-api/") {
                     sh "pwd"
