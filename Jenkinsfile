@@ -12,14 +12,14 @@ pipeline {
         }
 
         // Build General Dependencies
-        stage('Dependencies') {
+       /* stage('Dependencies') {
             steps {
-                sh "apt-get install -y"
+                sh "yum install -y"
                 sh "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
                 sh "apt-get install -y nodejs"
             }
         }
-
+*/
         //  Build package and install vendor packages
         stage('Build') {
             steps {
