@@ -17,9 +17,9 @@ pipeline {
         stage('Dependencies') {
             steps {
                 
-                 sh "apt-get install -y"
-                sh "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
-                sh "apt-get install -y nodejs"
+                 sh "sudo yum install -y"
+                sh curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+                sh "yum install -y nodejs"
             }
         }
         
