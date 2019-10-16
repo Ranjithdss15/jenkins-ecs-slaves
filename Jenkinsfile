@@ -1,5 +1,5 @@
 pipeline {
-    // agent any
+     agent any
    // agent {
     //docker { image 'node:latest' }
     //}
@@ -21,6 +21,13 @@ pipeline {
                // sh "yum install -y nodejs"
          //   }
        // }
+        
+        stage('TF plan') {
+            steps {
+                sh "cd terraform"
+                sh "terraform plan"
+            }
+        }
         
 
         //  Build package and install vendor packages
