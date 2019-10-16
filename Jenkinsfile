@@ -73,10 +73,10 @@ pipeline {
         }
     }
 
-    post {
+   /* post {
         always {
             // Clean Workspace
             cleanWs()
         }
-    }
+    }*/
 }
