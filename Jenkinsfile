@@ -27,7 +27,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'chown -R 996:992 "/.npm" '
+                sh 'chown -R 996:992 "/var/lib/jenkins/workspace/jenkins-slave/micro-api/.npm" '
                 sh "git clone https://github.com/msfidelis/micro-api.git"
                 dir("micro-api/") {
                     sh "pwd"
