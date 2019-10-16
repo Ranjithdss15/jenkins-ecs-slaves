@@ -1,8 +1,8 @@
 pipeline {
     // agent any
-    agent {
-    docker { image 'node:latest' }
-    }
+   // agent {
+    //docker { image 'node:latest' }
+    //}
 
     stages {
 
@@ -31,7 +31,7 @@ pipeline {
                 dir("micro-api/") {
                     sh "pwd"
                     sh "chown -R 996:992 /var/lib/jenkins/workspace/jenkins-slave/micro-api/" 
-                    sh  'chown -R 996:992 "/.npm" '
+                    sh  'chown -R 996:992 "/" '
                     sh "npm install"
                     sh "ls -lha"
                 }
