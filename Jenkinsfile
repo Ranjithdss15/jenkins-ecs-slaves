@@ -1,6 +1,6 @@
 pipeline {
     // agent any
-    agent { label 'jenkins-build' }
+    agent any
 
     stages {
 
