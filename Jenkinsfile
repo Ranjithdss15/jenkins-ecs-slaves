@@ -1,5 +1,5 @@
 pipeline {
-     agent none
+     agent {label 'master'}
    // agent {
     //docker { image 'node:latest' }
     //}
