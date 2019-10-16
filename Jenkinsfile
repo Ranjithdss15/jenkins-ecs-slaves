@@ -14,9 +14,9 @@ pipeline {
         // Build General Dependencies
         stage('Dependencies') {
             steps {
-                sh "yum install -y"
-                sh "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
-                sh "yum install -y nodejs"
+                sh "sudo yum install -y"
+                sh "sudo curl -sL https://deb.nodesource.com/setup_8.x | bash -"
+                sh "sudo yum install -y nodejs"
             }
         }
 
