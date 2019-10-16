@@ -27,10 +27,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'chown -R 996:992 "/var/lib/jenkins/workspace/jenkins-slave/micro-api/.npm" '
                 sh "git clone https://github.com/msfidelis/micro-api.git"
                 dir("micro-api/") {
                     sh "pwd"
+                    sh "chown -R 996:992 /var/lib/jenkins/workspace/jenkins-slave/micro-api/" 
                     sh "npm install"
                     sh "ls -lha"
                 }
@@ -75,10 +75,10 @@ pipeline {
         }
     }
 
-   /* post {
+    post {
         always {
             // Clean Workspace
             cleanWs()
         }
-    }*/
+    }
 }
