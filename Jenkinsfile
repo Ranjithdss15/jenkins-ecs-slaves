@@ -15,9 +15,10 @@ pipeline {
         stage('Dependencies') {
             steps {
                 
-                sh "yum install -y"
+                sudo su
                 chown root:root /var/db/sudo/lectured
                 chmod 700 /var/db/sudo/lectured
+                sh "yum install -y"
                 sh "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
                 sh "yum install -y nodejs"
             }
