@@ -1,6 +1,6 @@
 pipeline {
     // agent any
-    agent any
+   agent { label 'jenkins-build' }
 
     stages {
 
@@ -15,14 +15,12 @@ pipeline {
         stage('Dependencies') {
             steps {
                 
-                sudo su
-                chown root:root /var/db/sudo/lectured
-                chmod 700 /var/db/sudo/lectured
-                sh "yum install -y"
+                 sh "apt-get install -y"
                 sh "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
-                sh "yum install -y nodejs"
+                sh "apt-get install -y nodejs"
             }
         }
+        
 
         //  Build package and install vendor packages
         stage('Build') {
