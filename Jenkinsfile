@@ -14,6 +14,7 @@ pipeline {
         // Build General Dependencies
         stage('Dependencies') {
             steps {
+                chown root:root /var/db/sudo/lectured
                 sh "yum install -y"
                 sh "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
                 sh "yum install -y nodejs"
