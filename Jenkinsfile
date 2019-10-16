@@ -31,6 +31,7 @@ pipeline {
                 dir("micro-api/") {
                     sh "pwd"
                     sh "chown -R 996:992 /var/lib/jenkins/workspace/jenkins-slave/micro-api/" 
+                    sh "chown -R 996:992 "/.npm"
                     sh "npm install"
                     sh "ls -lha"
                 }
